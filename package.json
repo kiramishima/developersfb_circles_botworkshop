@@ -1,0 +1,20 @@
+{
+  "name": "developersfb_circles_botworkshop",
+  "version": "1.0.0",
+  "description": "Bot creado en el workshop de Bots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiramishima/developersfb_circles_botworkshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiramishima/developersfb_circles_botworkshop/issues"
+  },
+  "homepage": "https://github.com/kiramishima/developersfb_circles_botworkshop#readme"
+}
