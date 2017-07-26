@@ -19,3 +19,13 @@ const APP_SECRET = config.get('appSecret');
 const VALIDATION_TOKEN =  config.get('validationToken');
 const PAGE_ACCESS_TOKEN =  config.get('pageAccessToken'); 
 const SERVER_URL =  config.get('serverURL');
+
+
+
+
+//Start app
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
+module.exports = app;
