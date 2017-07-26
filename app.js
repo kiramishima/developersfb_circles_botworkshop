@@ -21,6 +21,29 @@ const PAGE_ACCESS_TOKEN =  config.get('pageAccessToken');
 const SERVER_URL =  config.get('serverURL');
 
 
+// En caso de que no existan las constantes necesarias se termina la aplicación
+if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
+  console.error("Missing config values");
+  process.exit(1);
+}
+
+app.get('/',function(req,res){
+  res.send("ok");
+  console.log("entra");
+});
+
+//Creamos webhook para validar la propiedad
+app.get('/webhook',function(req,res){
+  if (req.query['hub.mode'] === 'subscribe' &&
+      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+    console.log("Validating webhook");
+    res.status(200).send(req.query['hub.challenge']);
+  } else {
+    console.error("Error en validación");
+    res.sendStatus(403);          
+  }  
+});
+
 
 
 //Start app
